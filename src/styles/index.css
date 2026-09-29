@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-[#F4F6F9] text-[#1E293B] antialiased font-sans selection:bg-[#003D7C] selection:text-white;
+  }
+}
+
+/* ========================================================================= */
+/* ACCESSIBILITY & FONT SCALE MODES                                         */
+/* ========================================================================= */
+.font-scale-sm {
+  font-size: 92% !important;
+}
+.font-scale-base {
+  font-size: 100% !important;
+}
+.font-scale-lg {
+  font-size: 110% !important;
+}
+.font-scale-xl {
+  font-size: 120% !important;
+}
+
+/* ========================================================================= */
+/* HIGH CONTRAST GOVERNMENT MODE                                            */
+/* ========================================================================= */
+.gov-high-contrast {
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+}
+.gov-high-contrast * {
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+  border-color: #FFFF00 !important;
+}
+.gov-high-contrast a,
+.gov-high-contrast button {
+  color: #00FFFF !important;
+}
+.gov-high-contrast img,
+.gov-high-contrast svg {
+  filter: contrast(200%) brightness(120%);
+}
+
+/* ========================================================================= */
+/* AUTHENTIC GOVERNMENT OF INDIA CARD & TABLE UTILITIES                     */
+/* ========================================================================= */
+@layer components {
+  /* Government Standard Card */
+  .gov-card {
+    @apply bg-white rounded-md border border-[#D0D7DE] shadow-sm transition-all;
+  }
+  
+  .gov-card-interactive {
+    @apply bg-white rounded-md border border-[#D0D7DE] shadow-sm hover:border-[#003D7C] hover:shadow-md transition-all cursor-pointer;
+  }
+
+  .gov-card-header {
+    @apply px-4 py-3 bg-[#F8FAFC] border-b border-[#D0D7DE] font-bold text-sm text-[#002856] flex items-center justify-between;
+  }
+
+  /* Government Section Title */
+  .gov-section-header {
+    @apply text-base font-bold text-[#002856] tracking-tight border-b-2 border-[#003D7C] pb-1.5 mb-3 flex items-center gap-2;
+  }
+
+  /* Official Tricolor Accent Strip */
+  .gov-tricolor-strip {
+    background: linear-gradient(90deg, #FF9933 0%, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #138808 66.66%, #138808 100%);
+    height: 4px;
+    width: 100%;
+  }
+
+  .gov-tricolor-left-border {
+    border-left: 4px solid #FF9933;
+  }
+
+  /* Official Badges */
+  .gov-badge-official {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-[#E1EDF7] text-[#003D7C] border border-[#C2DCF0];
+  }
+
+  .gov-badge-success {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-[#E8F5E9] text-[#138808] border border-[#A5D6A7];
+  }
+
+  .gov-badge-warning {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-[#FFF8E1] text-[#B45309] border border-[#FDE68A];
+  }
+
+  .gov-badge-danger {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-[#FFEBEE] text-[#C62828] border border-[#FFCDD2];
+  }
+
+  .gov-badge-neutral {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold bg-[#F1F5F9] text-[#475569] border border-[#CBD5E1];
+  }
+
+  /* Government Form Inputs */
+  .gov-input {
+    @apply bg-white border border-[#CBD5E1] rounded text-xs text-[#1E293B] px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#003D7C] focus:border-[#003D7C] placeholder:text-[#94A3B8] transition-all;
+  }
+
+  .gov-btn-primary {
+    @apply bg-[#003D7C] hover:bg-[#002856] text-white font-semibold text-xs px-4 py-2 rounded border border-[#002856] shadow-sm transition-all flex items-center justify-center gap-1.5 active:scale-[0.99];
+  }
+
+  .gov-btn-secondary {
+    @apply bg-white hover:bg-[#F8FAFC] text-[#003D7C] font-semibold text-xs px-4 py-2 rounded border border-[#CBD5E1] hover:border-[#003D7C] shadow-sm transition-all flex items-center justify-center gap-1.5 active:scale-[0.99];
+  }
+
+  .gov-btn-saffron {
+    @apply bg-[#FF9933] hover:bg-[#E65100] text-white font-bold text-xs px-4 py-2 rounded border border-[#E65100] shadow-sm transition-all flex items-center justify-center gap-1.5 active:scale-[0.99];
+  }
+
+  /* Official Data Table */
+  .gov-table {
+    @apply w-full text-xs text-left border-collapse border border-[#D0D7DE];
+  }
+
+  .gov-th {
+    @apply bg-[#F0F5FA] text-[#002856] font-bold px-3 py-2.5 border border-[#D0D7DE] text-[11px] uppercase tracking-wider select-none;
+  }
+
+  .gov-td {
+    @apply px-3 py-2.5 border border-[#E2E8F0] text-[#334155] bg-white hover:bg-[#F8FAFC] transition-colors;
+  }
+}
+
+/* Custom crisp scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #003D7C;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #002856;
+}
+
+/* Leaflet map custom popups */
+.leaflet-popup-content-wrapper {
+  border-radius: 6px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 40, 86, 0.15) !important;
+  border: 1px solid #003D7C !important;
+  padding: 0 !important;
+}
+
+.leaflet-popup-content {
+  margin: 12px !important;
+  line-height: 1.4 !important;
+  font-family: inherit !important;
+}
+
+.leaflet-tooltip {
+  background: #002856 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #003D7C !important;
+  border-radius: 4px !important;
+  font-family: inherit !important;
+  font-size: 11px !important;
+}
+
+/* Marquee / News Ticker animation */
+@keyframes gov-ticker {
+  0% { transform: translate3d(100%, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+
+.animate-gov-ticker {
+  display: inline-block;
+  white-space: nowrap;
+  animation: gov-ticker 32s linear infinite;
+}
+
+.animate-gov-ticker:hover {
+  animation-play-state: paused;
+}
+

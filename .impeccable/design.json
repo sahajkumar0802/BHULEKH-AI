@@ -1,0 +1,24 @@
+{
+  "name": "BHULEKH AI",
+  "platform": "web",
+  "framework": "react",
+  "styling": "tailwind",
+  "theme": {
+    "mode": "light-default",
+    "primary": "#026fc3",
+    "darkSurface": "#0f172a",
+    "accent": "#f59e0b",
+    "fontSans": "Inter",
+    "fontMono": "JetBrains Mono"
+  },
+  "surfaces": [
+    { "id": "signin", "title": "Sign In / Authentication", "mode": "operate" },
+    { "id": "user-dashboard", "title": "Citizen Dashboard", "mode": "operate" },
+    { "id": "upload-document", "title": "Upload & Scan Document", "mode": "operate" },
+    { "id": "check-document", "title": "Check Document & Taxes", "mode": "operate" },
+    { "id": "track-progress", "title": "Track Progress & Appeals", "mode": "operate" },
+    { "id": "official-dashboard", "title": "Official Statutory Portal", "mode": "operate" },
+    { "id": "twin", "title": "Digital Land Twin", "mode": "experience" },
+    { "id": "landing", "title": "Public Overview & SIH Showcase", "mode": "persuade" }
+  ]
+}
