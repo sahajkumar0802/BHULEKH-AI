@@ -14,12 +14,12 @@ export interface AuthConfig {
 
 /**
  * Global authentication configuration for BHULEKH AI.
- * In Demo Mode, the fixed OTP (789632) is accepted for any valid 12-digit Aadhaar.
+ * In Demo Mode, the fixed OTP (123456) is accepted for any valid 12-digit Aadhaar.
  * When Demo Mode is disabled, fixed demo OTPs cannot bypass authentication.
  */
 export const AUTH_CONFIG: AuthConfig = {
   isDemoMode: true,
-  fixedDemoOtp: '789632'
+  fixedDemoOtp: '123456'
 };
 
 export interface AuthUser {
@@ -157,7 +157,7 @@ class MockAadhaarAuthService implements AadhaarAuthProvider {
       return { success: false, error: 'Please enter the 6-digit OTP.' };
     }
 
-    // Demo Mode Verification: Accepts fixed demo OTP 789632 for any valid 12-digit Aadhaar
+    // Demo Mode Verification: Accepts fixed demo OTP 123456 for any valid 12-digit Aadhaar
     if (AUTH_CONFIG.isDemoMode) {
       if (cleanOtp !== AUTH_CONFIG.fixedDemoOtp) {
         return { 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
-import { aadhaarAuthService, govAuthService } from '../services/authService';
+import { aadhaarAuthService, govAuthService, AUTH_CONFIG } from '../services/authService';
 import { UserRole } from '../types/landRecord';
 import { SihBadge, AshokaEmblem } from '../components/common/Emblems';
 import {
@@ -502,6 +502,19 @@ export const SignInPage: React.FC = () => {
                             }`}
                             autoFocus
                           />
+                        </div>
+
+                        {/* Demo OTP Information Note */}
+                        <div className="mt-2 p-2.5 bg-[#FFF8E1] border border-[#FDE68A] rounded-md text-xs text-[#002856] flex items-center justify-between flex-wrap gap-1 shadow-2xs">
+                          <div className="flex items-center gap-1.5 font-medium">
+                            <Sparkles className="w-3.5 h-3.5 text-[#FF9933] shrink-0" />
+                            <span>
+                              <strong>Demo OTP: {AUTH_CONFIG.fixedDemoOtp}</strong>
+                            </span>
+                          </div>
+                          <span className="text-[10px] text-slate-600 italic">
+                            For demonstration purposes only.
+                          </span>
                         </div>
 
                         {otpError && (
